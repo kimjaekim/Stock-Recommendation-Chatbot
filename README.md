@@ -1,24 +1,41 @@
-# Stock Recommendation Chatbot
+# 안전한 낚시터 - Spring Boot AI 주식 추천 웹앱
 
-AI 기반 주식 추천·검증 대시보드를 제공하는 Spring Boot 웹앱입니다. `/` 진입 시 정적 `index.html`로 포워딩해 PWA 메타 정보와 서비스 워커를 로드하고, 멀티 타임프레임 예측·포트폴리오·검증 기능을 한 화면에서 제공합니다.
+## 프로젝트 구조 (jusic)
 
-## 주요 기능
-- **랜딩 페이지 & PWA**: 타임프레임(1/3/5/10일) 선택, 포트폴리오/오늘의 검증 모달 버튼, 듀얼 게이지(위험도·변동성), 채팅 인터페이스를 포함한 대시보드를 정적 리소스로 제공하며, 서비스 워커 등록과 설치 프롬프트/푸시 권한 요청으로 PWA를 구성합니다.【F:src/main/java/com/future/my/controller/HomeController.java†L8-L18】【F:src/main/resources/static/index.html†L1-L123】【F:src/main/resources/static/index.html†L154-L193】
-- **시장 안전도 대시보드**: `/api/chat/market-status`에서 예측 데이터를 집계해 총 종목 수, 안전·저변동 비율, 시장 코멘트를 계산하고 Chart.js 도넛 게이지로 시각화합니다.【F:src/main/java/com/future/my/controller/ChatbotController.java†L24-L114】【F:src/main/resources/static/js/chat.js†L19-L92】【F:src/main/resources/static/js/chat.js†L95-L164】
-- **챗봇 메시지 및 멀티 타임프레임 분석**: `/api/chat/message`가 단일 챗 응답을 반환하고, `/api/chat/multi-timeframe`는 12개 모델 기반 멀티 타임프레임 응답(차트/추천/비교 데이터 포함)을 제공합니다.【F:src/main/java/com/future/my/controller/ChatbotController.java†L26-L58】【F:src/main/java/com/future/my/controller/ChatbotController.java†L116-L173】
-- **종목 정보 조회**: 안전 종목 목록, 특정 종목 세부 정보, 간이 차트 이미지를 반환하는 `/api/chat/safe-stocks`, `/api/chat/stock/{ticker}`, `/api/chat/stock/{ticker}/chart` API를 제공합니다.【F:src/main/java/com/future/my/controller/ChatbotController.java†L118-L145】
-- **포트폴리오 관리**: `/api/portfolio`에서 포트폴리오와 예측을 함께 조회하고, `/api/portfolio/add`, `/api/portfolio/remove/{ticker}`, `/api/portfolio/clear`로 추가·삭제·초기화 작업을 처리합니다.【F:src/main/java/com/future/my/controller/PortfolioController.java†L14-L83】
-- **오늘의 예측 검증**: `/api/verification/today`가 외부 Python 스크립트를 실행해 정확도, 추천 종목 수, 평균 수익률을 JSON으로 반환합니다.【F:src/main/java/com/future/my/controller/VerificationController.java†L18-L74】
-- **백테스팅 결과 조회**: `/api/backtest`가 백테스트 결과를 생성해 응답합니다.【F:src/main/java/com/future/my/controller/BacktestController.java†L11-L34】
+- **src/main/java/com/future/my/**
+  - `controller/` : API 엔드포인트 (챗봇, 포트폴리오, 검증 등)
+  - `domain/` : 주요 DTO, 응답/예측/포트폴리오 엔티티
+  - `service/` : 챗봇 백엔드 로직, 예측 데이터 서비스, 포트폴리오, 백테스트 등
+  - `util/` : 보조 유틸(티커-종목명 등)
+  - `JusicApplication.java` : 메인 실행
+- **src/main/resources/**
+  - `application.properties` : 서버설정/인코딩 등
+  - `data/today_predictions_1day/3day/5day/10day.json` : 최신 예측 데이터 파일(파이썬에서 생성, 서버 자동로드)
+  - `static/` : 프론트엔드 정적 리소스(HTML, CSS, JS, 아이콘/manifest)
+      - `index.html` : 메인 챗봇UI
+      - `css/chat.css`, `js/chat.js` : 주요 스타일/동작, chat+PWA관련
+      - `portfolio.js` : 포트폴리오/백테스트/오늘의 검증 등 관리
+      - `manifest.json`, `sw.js` : PWA설정, 오프라인/알림 대응
+      - `icon-192x192.png` 등 : 모바일/PC용 아이콘
 
-## 클라이언트 동작
-- DOM 로드 시 시장 안전도 API를 호출하고, 응답 구조가 없을 때를 대비한 방어 로직을 포함합니다.【F:src/main/resources/static/js/chat.js†L19-L63】
-- 듀얼 게이지를 생성할 때 고해상도 렌더링, 그래디언트, 안전/위험 및 저/고변동 색상 표시를 적용하며, 전체 종목이 0일 때는 차트를 건너뜁니다.【F:src/main/resources/static/js/chat.js†L95-L164】
-- 메시지 전송 버튼과 엔터 키 입력을 처리해 챗봇 API로 요청을 보냅니다.【F:src/main/resources/static/js/chat.js†L21-L31】
+## 🧑‍💻 전체 동작 개요
+1. **AI 모델 예측** : jusic_data의 파이썬 스크립트가 json 예측 결과 매일 자동 생성
+2. **스프링부트 서버**: 해당 json을 실시간 읽어 투자 추천/분석 노출, 챗봇/포트폴리오/백테스팅 등 제공
+3. **REST API** : 자연어 기반 챗봇, 종목 분석, 포트폴리오 관리, 오늘의 예측 vs 실제 검증 등
+4. **프론트/PWA**: index.html에 모바일/PC 최적 UI + 알림, 설치, 서비스워커 구현
 
-## 서버 구성
-- `JusicApplication`에서 Spring Boot 애플리케이션을 기동합니다.【F:src/main/java/com/future/my/JusicApplication.java†L1-L12】
-- 주요 API는 `com.future.my.controller` 패키지에 위치하며, 서비스 계층(`service`)과 도메인 객체(`domain`)를 통해 예측·차트·포트폴리오 로직을 분리합니다.
+## 📦 주요 기능
+- **기간별/종목별 주식 추천 및 분석** (1/3/5/10일), 고객 투자금/성향 자동 매칭
+- **포트폴리오 저장/관리, 간이 백테스팅** (json기반, 브라우저에 실시간 표시)
+- **실시간 오늘의 예측 vs 실제시장 성과 검증**
+- **시장 안전도/변동성/상위종목 알림 등 투자 인사이트 제공**
+- **100% 오프라인/모바일 설치(PWA 지원)**
 
-## 실행
-이 저장소에는 빌드 스크립트가 포함되어 있지 않으며, 기존 환경에서 실행 가능한 상태로 제공됩니다. Spring Boot 프로젝트로 import한 뒤 애플리케이션을 실행하면 루트 경로(`/`)에서 대시보드 UI에 접근할 수 있습니다.
+## 📝 사용법 요약
+- 파이썬에서 예측 json 생성 → src/main/resources/data/에 저장 (자동 동기화)
+- 서버 실행: `cd jusic && .\mvnw.cmd spring-boot:run`
+- 웹 접근(PC/모바일): http://localhost:8080
+
+## ⚙️ 추가 참고
+- Spring Boot + Python(ProcessBuilder, CLI) 완전 분리 구조로, AI 예측/챗봇/서버 모두 모듈별로 최신화 및 유지보수가 쉽습니다.
+- 최종 서비스 기준 stateful DB 대신 json/캐시/브라우저 기반 경량 구조(실질적 빠른 검증, 개인화 지원)
