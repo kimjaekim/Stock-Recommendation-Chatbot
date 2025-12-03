@@ -1,0 +1,641 @@
+{
+  "prediction_date": "2025-10-31",
+  "target_date": "2025-11-10",
+  "date": "2025-10-31",
+  "timestamp": "2025-10-31T02:06:23.110849",
+  "timeframe": "10day",
+  "totalStocks": 30,
+  "modelType": "multi_timeframe_12_models",
+  "predictions": {
+    "005930.KS": {
+      "ticker": "005930.KS",
+      "stockName": "삼성전자",
+      "currentPrice": 104100.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4113405375323227
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.721587803780015
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.43020500773703046
+      },
+      "score": -0.3250530577140613,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "000660.KS": {
+      "ticker": "000660.KS",
+      "stockName": "SK하이닉스",
+      "currentPrice": 568000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.36902546243690365
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.3916728086781036
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.6064490675298093
+      },
+      "score": -0.12410205526412715,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "051910.KS": {
+      "ticker": "051910.KS",
+      "stockName": "LG화학",
+      "currentPrice": 405000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.3923388551184892
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.13989558151261533
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.6651313367374131
+      },
+      "score": -0.24764320087077835,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "035420.KS": {
+      "ticker": "035420.KS",
+      "stockName": "NAVER",
+      "currentPrice": 255500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.439878439017271
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.5500797959850026
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.44646595210257495
+      },
+      "score": -0.2623728840244022,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "035720.KS": {
+      "ticker": "035720.KS",
+      "stockName": "카카오",
+      "currentPrice": 63500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.45265369927504584
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.2483417831639522
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5140669280002766
+      },
+      "score": -0.1876088134807543,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "005380.KS": {
+      "ticker": "005380.KS",
+      "stockName": "현대차",
+      "currentPrice": 265000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.3906019551730462
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.7015984863452143
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.4399377272334351
+      },
+      "score": -0.3073656470402931,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "000270.KS": {
+      "ticker": "000270.KS",
+      "stockName": "기아",
+      "currentPrice": 116200.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.418089290280748
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8340306858672184
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.37045958333814594
+      },
+      "score": -0.38732863011061275,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "068270.KS": {
+      "ticker": "068270.KS",
+      "stockName": "셀트리온",
+      "currentPrice": 175100.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4226318157201098
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8048134139002615
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.3934355357468728
+      },
+      "score": -0.3714876171254249,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "207940.KS": {
+      "ticker": "207940.KS",
+      "stockName": "삼성바이오로직스",
+      "currentPrice": 1877331.375,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.34088808710774754
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8422796231369323
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5019502505796614
+      },
+      "score": -0.5817102423873999,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "005490.KS": {
+      "ticker": "005490.KS",
+      "stockName": "POSCO",
+      "currentPrice": 319500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.40355865887262127
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.6526209297421083
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.45513248959950575
+      },
+      "score": -0.28851078010238435,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "006400.KS": {
+      "ticker": "006400.KS",
+      "stockName": "삼성SDI",
+      "currentPrice": 325500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4071086938030174
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.056684817835759856
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.7480321307293127
+      },
+      "score": -0.3068221483790803,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "051900.KS": {
+      "ticker": "051900.KS",
+      "stockName": "LG생활건강",
+      "currentPrice": 287000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4188100011285185
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8874717217888437
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.3704925748138298
+      },
+      "score": -0.40894904540706145,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "028260.KS": {
+      "ticker": "028260.KS",
+      "stockName": "삼성물산",
+      "currentPrice": 227000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4250663111568387
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.17334594093462455
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5683078220171094
+      },
+      "score": -0.22151178803532107,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "012330.KS": {
+      "ticker": "012330.KS",
+      "stockName": "현대모비스",
+      "currentPrice": 307000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4165832879446001
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8794151196188862
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.36335333703618783
+      },
+      "score": -0.40673186436911757,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "066570.KS": {
+      "ticker": "066570.KS",
+      "stockName": "LG전자",
+      "currentPrice": 87600.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4319728752689478
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.5250485319227158
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.45260605404129134
+      },
+      "score": -0.24805840560289527,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "003550.KS": {
+      "ticker": "003550.KS",
+      "stockName": "LG",
+      "currentPrice": 82700.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4253364985843988
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.7167272815650995
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.4142632161671659
+      },
+      "score": -0.33199288308878794,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "096770.KS": {
+      "ticker": "096770.KS",
+      "stockName": "SK이노베이션",
+      "currentPrice": 134600.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4099616564837908
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.4193149250338864
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5182781230061693
+      },
+      "score": -0.10533014050731451,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "017670.KS": {
+      "ticker": "017670.KS",
+      "stockName": "SK텔레콤",
+      "currentPrice": 52700.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4264045625745746
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.9111306121953215
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.3649010585628633
+      },
+      "score": -0.4224685771385139,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "009150.KS": {
+      "ticker": "009150.KS",
+      "stockName": "삼성전기",
+      "currentPrice": 225000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4273096528900185
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.6786037212240464
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.4304836829924855
+      },
+      "score": -0.31337894625300367,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "034730.KS": {
+      "ticker": "034730.KS",
+      "stockName": "SK",
+      "currentPrice": 247500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.40515567376731326
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.6646766708721031
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.44849752584893715
+      },
+      "score": -0.2955507727051666,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "000720.KS": {
+      "ticker": "000720.KS",
+      "stockName": "현대건설",
+      "currentPrice": 68900.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.46157593789877066
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.013221871554932561
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.7217110485423589
+      },
+      "score": -0.3366905917781864,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "003490.KS": {
+      "ticker": "003490.KS",
+      "stockName": "대한항공",
+      "currentPrice": 22500.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.41492000293542997
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.8780047446640225
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.37199213253721647
+      },
+      "score": -0.4034258657587054,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "011200.KS": {
+      "ticker": "011200.KS",
+      "stockName": "HMM",
+      "currentPrice": 20750.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.42102002989984333
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.7781067680801097
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.39487642868648365
+      },
+      "score": -0.3598806105253681,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "012450.KS": {
+      "ticker": "012450.KS",
+      "stockName": "한화에어로스페이스",
+      "currentPrice": 994000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.43297272537297143
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.44550524398170716
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.4471941784523347
+      },
+      "score": 0.13846018832522655,
+      "recommendation": "매수",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "015760.KS": {
+      "ticker": "015760.KS",
+      "stockName": "한국전력",
+      "currentPrice": 42950.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4472534880170946
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.3429151421207051
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.500992328927724
+      },
+      "score": -0.14462074618963205,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "016360.KS": {
+      "ticker": "016360.KS",
+      "stockName": "삼성생명",
+      "currentPrice": 77600.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.42487481072104816
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.6174294533586808
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.439423441234039
+      },
+      "score": -0.28582210478732945,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "017800.KS": {
+      "ticker": "017800.KS",
+      "stockName": "현대엘리베이",
+      "currentPrice": 76000.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.449947179605032
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.36474741849315223
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.4457962482076112
+      },
+      "score": 0.09986651658740253,
+      "recommendation": "보유",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "018880.KS": {
+      "ticker": "018880.KS",
+      "stockName": "한온시스템",
+      "currentPrice": 4125.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.44498913372204857
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.24713040991202911
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5535858350373789
+      },
+      "score": -0.19529049159725004,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "020150.KS": {
+      "ticker": "020150.KS",
+      "stockName": "일동제약",
+      "currentPrice": 26250.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.45231553840241934
+      },
+      "volatility": {
+        "prediction": 0,
+        "probability": 0.2508131226814494
+      },
+      "risk": {
+        "prediction": 1,
+        "probability": 0.5184100091285206
+      },
+      "score": -0.18758769165039713,
+      "recommendation": "매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    },
+    "021240.KS": {
+      "ticker": "021240.KS",
+      "stockName": "코웨이",
+      "currentPrice": 90200.0,
+      "direction": {
+        "prediction": 0,
+        "probability": 0.4225853217265898
+      },
+      "volatility": {
+        "prediction": 1,
+        "probability": 0.9195031881650256
+      },
+      "risk": {
+        "prediction": 0,
+        "probability": 0.3667389375811235
+      },
+      "score": -0.4240214034750358,
+      "recommendation": "강력 매도",
+      "timeframe": "10day",
+      "accuracy": 0.532483930211203
+    }
+  }
+}

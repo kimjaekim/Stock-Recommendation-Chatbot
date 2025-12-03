@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+    <title>🌊 안전한 낚시터 - AI 주식 투자 추천 챗봇</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- App Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png">
+    <link rel="apple-touch-icon" href="/icon-192x192.png">
+    
+    <link rel="stylesheet" href="/css/chat.css?v=20251030-mini">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Chart.js Financial Plugin (캔들스틱 차트) -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.1/dist/chartjs-chart-financial.min.js"></script>
+    <!-- date-fns adapter for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="toggle-info-btn" onclick="toggleInfo()">상태/정보 보기</button>
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header-top">
+                <h1>🌊 안전한 낚시터</h1>
+                <p class="subtitle">멀티 타임프레임 AI 주식 예측 시스템</p>
+                <div class="model-info">
+                    <span class="model-badge">🤖 12개 모델</span>
+                    <span class="model-badge">📊 4가지 기간 (1/3/5/10일)</span>
+                    <span class="model-badge">🎯 3가지 예측 (방향/변동/위험)</span>
+                </div>
+                
+                <!-- 타임프레임 선택 버튼 -->
+                <div class="timeframe-selector">
+                    <label>⏰ 예측 기간 선택:</label>
+                    <div class="timeframe-buttons">
+                        <button class="tf-btn" data-timeframe="1day" onclick="selectTimeframe('1day')">
+                            <span class="tf-icon">📅</span>
+                            <span class="tf-label">내일</span>
+                        </button>
+                        <button class="tf-btn" data-timeframe="3day" onclick="selectTimeframe('3day')">
+                            <span class="tf-icon">📆</span>
+                            <span class="tf-label">3일 후</span>
+                        </button>
+                        <button class="tf-btn active" data-timeframe="5day" onclick="selectTimeframe('5day')">
+                            <span class="tf-icon">📊</span>
+                            <span class="tf-label">이번 주</span>
+                        </button>
+                        <button class="tf-btn" data-timeframe="10day" onclick="selectTimeframe('10day')">
+                            <span class="tf-icon">📈</span>
+                            <span class="tf-label">10일 후</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 포트폴리오 & 오늘의 검증 버튼 -->
+                <div class="menu-buttons">
+                    <button class="menu-btn" onclick="showPortfolio()">
+                        💼 내 포트폴리오
+                    </button>
+                    <button class="menu-btn" onclick="showTodayVerification()">
+                        📊 오늘의 검증
+                    </button>
+                </div>
+            </div>
+            
+                    <!-- 시장 안전도 게이지 (컴팩트) -->
+                    <div class="market-dashboard">
+                        <div class="dashboard-card">
+                            <h3>📊 오늘의 시장 상태</h3>
+                            <div class="dual-gauge-container">
+                                <!-- Risk 게이지 -->
+                                <div class="gauge-item">
+                                    <div class="gauge-title">🛡️ 위험도</div>
+                                    <canvas id="riskGaugeChart" width="80" height="80"></canvas>
+                        <div class="gauge-info">
+                            <span id="safeCount">0</span>개 안전
+                        </div>
+                                </div>
+                                <!-- Volatility 게이지 -->
+                                <div class="gauge-item">
+                                    <div class="gauge-title">📉 변동성</div>
+                                    <canvas id="volatilityGaugeChart" width="80" height="80"></canvas>
+                        <div class="gauge-info">
+                            <span id="lowVolCount">0</span>개 저변동
+                        </div>
+                                </div>
+                            </div>
+                            <!-- 시장 상태 코멘트 -->
+                            <div class="market-comment" id="marketComment">
+                                💡 현재 시장 상황을 고려하여 신중하게 투자하세요.
+                            </div>
+                        </div>
+                    </div>
+        </header>
+
+        <!-- 채팅 영역 -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 초기 메시지 -->
+                <div class="welcome-card">
+                    <h2>🌊 안녕하세요!</h2>
+                    <p>AI 기반 주식 투자 분석 대시보드에 오신 것을 환영합니다.</p>
+                    
+                    <div class="help-grid">
+                        <div class="help-item">
+                            <div class="help-icon">💰</div>
+                            <div class="help-content">
+                                <h4>투자 추천 (5일 기준)</h4>
+                                <p>"100만원 안전하게 추천해줘"</p>
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">⏰</div>
+                            <div class="help-content">
+                                <h4>기간별 예측</h4>
+                                <p>"내일" / "이번주" / "다음주" / "장기"</p>
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">📊</div>
+                            <div class="help-content">
+                                <h4>종목 분석</h4>
+                                <p>"삼성전자 내일 전망은?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 입력 영역 -->
+            <div class="chat-input-container">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="chat-input" 
+                    placeholder="메시지를 입력하세요..."
+                    autocomplete="off"
+                >
+                <button id="sendButton" class="send-button">
+                    전송 📤
+                </button>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>© 2025 안전한 낚시터 | AI 기반 주식 예측 시스템</p>
+        </footer>
+    </div>
+
+    <!-- 로딩 인디케이터 -->
+    <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+        <div class="spinner"></div>
+        <p>응답 생성중...</p>
+    </div>
+
+    <script src="/js/chat.js?v=20251030-clean"></script>
+    <script src="/js/portfolio.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('✅ SW registered:', registration.scope);
+                        
+                        // Push 알림 권한 요청
+                        if ('PushManager' in window) {
+                            Notification.requestPermission().then(permission => {
+                                if (permission === 'granted') {
+                                    console.log('✅ Push notification permission granted');
+                                }
+                            });
+                        }
+                    })
+                    .catch(err => console.error('❌ SW registration failed:', err));
+            });
+        }
+        
+        // 앱 설치 프롬프트
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // 설치 버튼 표시 (선택사항)
+            console.log('📱 앱 설치 가능');
+        });
+        
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ 앱이 설치되었습니다!');
+            deferredPrompt = null;
+        });
+    </script>
+</body>
+</html>
+

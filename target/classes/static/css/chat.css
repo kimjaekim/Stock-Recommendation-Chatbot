@@ -1,0 +1,1296 @@
+/* 전역 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+/* 헤더 - 대시보드 스타일 (극소형) */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 12px;
+}
+
+.header-top {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.header-top h1 {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+}
+
+.subtitle {
+    font-size: 0.65em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+/* 모델 정보 뱃지 (컴팩트) */
+.model-info {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.model-badge {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.model-badge:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 모델 성능 섹션 */
+.model-performance {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(102, 126, 234, 0.15);
+}
+
+.model-performance h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #667eea;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.performance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.performance-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+.perf-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.perf-value {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+}
+
+.perf-sub {
+    font-size: 11px;
+    color: #999;
+    font-weight: 500;
+}
+
+/* 시장 대시보드 카드 (컴팩트) */
+.market-dashboard {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.market-dashboard .dashboard-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 10px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.market-dashboard .dashboard-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 350px;
+}
+
+.dashboard-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* 듀얼 게이지 컨테이너 - 극도 컴팩트 */
+.dual-gauge-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 5px 0;
+    gap: 10px;
+}
+
+/* 개별 게이지 아이템 - 극소형 */
+.gauge-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 8px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.9) 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.gauge-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.gauge-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gauge-info {
+    text-align: center;
+    font-size: 9px;
+    color: #666;
+    font-weight: 600;
+    margin-top: 3px;
+    padding: 3px 6px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.gauge-info span {
+    color: #667eea;
+    font-size: 1.05em;
+    font-weight: 800;
+    text-shadow: 0 1px 2px rgba(102, 126, 234, 0.2);
+}
+
+/* 시장 상태 코멘트 - 극소형 */
+.market-comment {
+    margin-top: 5px;
+    padding: 5px 8px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-radius: 6px;
+    border-left: 2px solid #667eea;
+    border-right: 2px solid #764ba2;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    }
+    50% {
+        box-shadow: 0 6px 18px rgba(102, 126, 234, 0.25);
+    }
+}
+
+/* 채팅 컨테이너 */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+/* 웰컴 카드 */
+.welcome-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.welcome-card h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.help-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.help-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.help-icon {
+    font-size: 2.5em;
+    margin-right: 15px;
+}
+
+.help-content h4 {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.help-content p {
+    font-size: 0.9em;
+    opacity: 0.9;
+    color: white;
+}
+
+/* 메시지 스타일 */
+.message {
+    display: flex;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    flex-shrink: 0;
+}
+
+.message-content {
+    margin-left: 10px;
+    max-width: 90%;
+}
+
+.message-text {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-avatar {
+    background: #667eea;
+    color: white;
+}
+
+.user-message .message-content {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.user-message .message-text {
+    background: #667eea;
+    color: white;
+}
+
+.bot-message .message-avatar {
+    background: #f0f0f0;
+}
+
+/* 추천 종목 카드 - 대시보드 스타일 */
+.stock-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stock-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #667eea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stock-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.stock-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+.stock-ticker {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.stock-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.stock-predictions {
+    margin: 15px 0;
+}
+
+.prediction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.prediction-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.prediction-value {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.prediction-safe {
+    color: #4caf50;
+}
+
+.prediction-risk {
+    color: #f44336;
+}
+
+.prediction-neutral {
+    color: #ff9800;
+}
+
+/* Chart.js 차트 컨테이너 - 더 크고 화려하게 */
+.chart-container-js {
+    margin: 30px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(102, 126, 234, 0.15);
+    animation: slideInUp 0.6s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px; /* 최소 높이 증가 */
+}
+
+.chart-container-js:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chart-title {
+    font-size: 24px; /* 제목 크기 증가 */
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chart-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    min-height: 400px; /* 최소 높이 설정 */
+}
+
+.chart-canvas-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+
+/* 차트 래퍼 - 더 크고 세련된 디자인 */
+.chart-mini-wrapper {
+    width: 100%;
+    height: 280px; /* 높이 증가 */
+    margin: 20px 0;
+    position: relative;
+    overflow: visible;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-mini-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.chart-mini {
+    width: 100% !important;
+    height: 240px !important; /* 높이 증가 */
+    max-height: 240px !important;
+}
+
+/* 차트 중앙 텍스트 */
+.chart-center-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.stock-investment-info {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.investment-amount {
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* 차트 컨테이너 */
+.chart-container {
+    margin: 20px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.chart-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* 입력 영역 */
+.chat-input-container {
+    display: flex;
+    padding: 20px;
+    background: white;
+    border-top: 2px solid #e0e0e0;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.chat-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.send-button {
+    margin-left: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.send-button:active {
+    transform: translateY(0);
+}
+
+.send-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* 푸터 */
+.footer {
+    background: #f5f5f5;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* 대시보드 컨테이너 - 진짜 대시보드! */
+.dashboard-container {
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 추천 카드 그리드 컨테이너 */
+.recommendation-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* 대시보드 카드 스타일 */
+.dashboard-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 예측 배지 스타일 - 더 작고 간결하게 */
+.prediction-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 2px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.prediction-badge.prediction-safe {
+    background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+    color: white;
+}
+
+.prediction-badge.prediction-risky {
+    background: linear-gradient(135deg, #f44336 0%, #e57373 100%);
+    color: white;
+}
+
+/* 카드 내 캔들스틱 차트 영역 */
+.stock-candlestick-chart {
+    width: 100%;
+    height: 250px;
+    margin: 15px 0;
+    background: rgba(102, 126, 234, 0.03);
+    border-radius: 12px;
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 확률 표시 */
+.probability-display {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.probability-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.probability-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.probability-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 카드 헤더 간결화 */
+.stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.stock-header h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.stock-header .ticker {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+
+.stock-current-price {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 투자 정보 간결화 */
+.stock-investment-info {
+    font-size: 13px;
+    color: #666;
+}
+
+/* 로딩 인디케이터 */
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 스크롤바 스타일 */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 타임프레임 선택 버튼 (컴팩트) */
+.timeframe-selector {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.timeframe-selector label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.timeframe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.tf-btn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 60px;
+}
+
+.tf-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tf-btn.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    border-color: rgba(255, 255, 255, 0.95);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tf-icon {
+    font-size: 14px;
+    display: block;
+}
+
+.tf-label {
+    font-size: 10px;
+    display: block;
+}
+
+/* 확률 프로그레스 바 */
+.probability-bar-container {
+    margin: 15px 0;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.probability-bar {
+    width: 100%;
+    height: 28px;
+    background: #f0f0f0;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.probability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50 0%, #8bc34a 50%, #cddc39 100%);
+    border-radius: 14px;
+    transition: width 1s ease-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+}
+
+.probability-fill.high {
+    background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.probability-fill.medium {
+    background: linear-gradient(90deg, #ff9800 0%, #ffa726 100%);
+}
+
+.probability-fill.low {
+    background: linear-gradient(90deg, #f44336 0%, #ef5350 100%);
+}
+
+.probability-text {
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 알림 배지 */
+.alert-badge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2000;
+    cursor: pointer;
+    animation: slideInRight 0.5s ease-out, pulse 2s ease-in-out infinite;
+}
+
+.alert-badge:hover {
+    transform: scale(1.05);
+}
+
+.alert-icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 107, 107, 0.6);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .header-top h1 {
+        font-size: 1.5em;
+    }
+
+    .dashboard-card {
+        min-width: auto;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+    
+    .timeframe-buttons {
+        gap: 8px;
+    }
+    
+    .tf-btn {
+        min-width: 70px;
+        padding: 10px 15px;
+    }
+    
+    .tf-icon {
+        font-size: 18px;
+    }
+    
+    .tf-label {
+        font-size: 11px;
+    }
+    
+    .alert-badge {
+        top: 10px;
+        right: 10px;
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+}
+
+/* 포트폴리오 & 백테스팅 메뉴 버튼 */
+.menu-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 포트폴리오 모달/화면 */
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.portfolio-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+}
+
+.portfolio-close {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.portfolio-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.summary-label {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.summary-value {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.portfolio-stock {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.stock-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.stock-profit {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.stock-profit.positive {
+    color: #4caf50;
+}
+
+.stock-profit.negative {
+    color: #f44336;
+}
+
+/* 백테스팅 결과 스타일 */
+.backtest-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.backtest-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.backtest-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.backtest-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.accuracy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.accuracy-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accuracy-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #667eea;
+}
+
+.stock-list {
+    display: grid;
+    gap: 10px;
+}
+
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 8px;
+}
+
+.stock-return {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.stock-return.positive {
+    color: #4caf50;
+}
+
+.stock-return.negative {
+    color: #f44336;
+}
+
+/* 모바일 헤더/시장상태 숨김 + 토글버튼 스타일 */
+@media (max-width: 600px) {
+  .header, .market-dashboard, .model-info {
+    display: none !important;
+  }
+}
+
+#toggle-info-btn {
+  display: block !important;
+  width: 100%;
+  background: #c7d2fe;
+  border: none;
+  font-size: 14px;
+  padding: 8px 0;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #222;
+  font-weight: 700;
+}
